@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 12:53:51 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/09 15:11:58 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/09 15:13:15 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/09 16:16:40 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char *ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	unsigned char	*s2; //nao funciona com um tipo void
+	int	i;
 
 	i = 0;
-	s2 = s;
-	while (i < n)
+	c = (const char) c;
+	while (s[i])
 	{
-		s2[i] = '0';
+		if (s[i] == c)
+			return ((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*
 int	main(void)
 {
-	char	str[] = "Hellooooooooo";
-	
-	ft_bzero(str, 5);
-	printf("My function: %s", str);
+	char	*position;
+	const char	str[] = "help";
+
+	position = ft_strchr(str, 'e');
+	printf("%s", position);
 }*/

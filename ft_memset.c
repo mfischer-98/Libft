@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:33:29 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/09 13:01:15 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/09 15:18:38 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char *s2;
 	
 	i = 0;
-	s2 = s;
+	s2 = (unsigned char *) s;
 	while (i < n)
 	{
-		s2[i] = (unsigned char) c;
+		s2[i] = c;
 		i++;
  	}
 	return (s); //retorna um pointer to tipo void para o bloco de memoria
