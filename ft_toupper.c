@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 11:33:23 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/08 11:33:24 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/08 11:47:27 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/08 11:56:11 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include <stdio.h>
+
+int	ft_toupper(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (c >= 'a' && c <= 'z')
+		c -=  32;
+	return (c);
+}
+
+int	main(void)
+{
+	printf("%c", ft_toupper('C'));
+	printf("%c", ft_toupper('b'));
+	printf("%c", ft_toupper('5'));
 }

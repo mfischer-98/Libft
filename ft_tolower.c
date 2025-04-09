@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 11:33:23 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/08 11:33:24 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/08 11:51:43 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/08 11:55:16 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include <stdio.h>
+
+int	ft_tolower(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
+}
+
+int	main(void)
+{
+	printf("%c", ft_tolower('C'));
+	printf("%c", ft_tolower('b'));
+	printf("%c", ft_tolower('5'));
 }
