@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 10:55:43 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 11:40:41 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:26:44 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		{
 			j++;
 		}
-		if(needle[j] == '\0')
+		if (needle[j] == '\0')
 			return ((char *)&haystack[i]);
 		i++;
 	}

@@ -6,13 +6,13 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:16:16 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 10:30:48 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:49:24 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_strlcpy(char *dest, const void *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	l;
@@ -28,21 +28,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		dest[l] = src[i];
 		write(1, dest[l], 1);
 		i++;
-		l++; 
+		l++;
 	}
 	dest[l] = '\0';
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void){
-	char	dest[10] = "hello!";
-	char	source[10] = "hello ";
-	unsigned int	n;
-
-	n = 5;
-	printf("strlcpy: %s\n", strlcpy(dest, source, n));
-	printf("mine: %s\n", ft_strlcpy(dest, source, n));
-}/*

@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:57:44 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/09 15:15:23 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:18:30 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (*str - '0');
 		str++;
 	}
-	return(res * neg);
+	return (res * neg);
 }
 /*
 #include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:53:51 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/09 15:11:58 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:19:18 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	unsigned char	*s2; //nao funciona com um tipo void
+	size_t			i;
+	unsigned char	*s2;
 
 	i = 0;
 	s2 = s;

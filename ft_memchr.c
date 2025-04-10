@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:32:42 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 13:02:39 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:20:35 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str;
 
 	i = 0;
@@ -27,11 +27,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 	}
 	if (c == '\0')
-		return((char *)&str[i]);
+		return ((char *)&str[i]);
 	return (NULL);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	string[] = "42porto";
 	char	c = 'p';
@@ -39,4 +39,4 @@ int	main(void)
 
 	res = ft_memchr(string, c, 5);
 	printf("%s", res);
-}
+}*/

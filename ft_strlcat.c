@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 10:43:16 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 10:54:13 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:24:26 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strlcat(char *restrict dst, const char *restrict src)
 {
 	int	i;
-	int l;
+	int	l;
 
 	i = 0;
 	l = 0;
@@ -29,7 +29,7 @@ char	*ft_strlcat(char *restrict dst, const char *restrict src)
 		i++;
 		l++;
 	}
-	return(dst);
+	return (dst);
 }
 /*
 int	main(void)
