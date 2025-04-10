@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 11:51:43 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 10:29:20 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/10 12:32:42 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/10 13:02:39 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	size_t	i;
+	unsigned char	*str;
+
+	i = 0;
+	str = (unsigned char *) s;
+	c = (char) c;
+	while (str[i] && i < n)
+	{
+		if (str[i] == c)
+			return ((char *)&str[i]);
+		i++;
+	}
+	if (c == '\0')
+		return((char *)&str[i]);
+	return (NULL);
 }
-/*
-#include <stdio.h>
 
 int	main(void)
 {
-	printf("%c", ft_tolower('C'));
-	printf("%c", ft_tolower('b'));
-	printf("%c", ft_tolower('5'));
-}*/
+	char	string[] = "42porto";
+	char	c = 'p';
+	char	*res;
+
+	res = ft_memchr(string, c, 5);
+	printf("%s", res);
+}

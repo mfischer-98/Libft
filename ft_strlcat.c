@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 11:51:43 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 10:29:20 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/10 10:43:16 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/10 10:54:13 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strlcat(char *restrict dst, const char *restrict src)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	int	i;
+	int l;
+
+	i = 0;
+	l = 0;
+	while (dst[l])
+	{
+		l++;
+	}
+	while (dst[l] || src[i])
+	{
+		dst[l] = src[i];
+		i++;
+		l++;
+	}
+	return(dst);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
-	printf("%c", ft_tolower('C'));
-	printf("%c", ft_tolower('b'));
-	printf("%c", ft_tolower('5'));
+	char	dest[] = "Hello ";
+	char	src[] = "World!1!!!";
+
+	ft_strlcat(dest, src);
+	printf("%s\n", dest);
 }*/

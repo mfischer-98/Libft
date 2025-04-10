@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 11:51:43 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 10:29:20 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/10 10:31:22 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/10 10:41:09 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	int	i;
+
+	c = (const char) c;
+	i = 0;
+	while (s[i])
+		i++;
+	while (i > 0)
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
-	printf("%c", ft_tolower('C'));
-	printf("%c", ft_tolower('b'));
-	printf("%c", ft_tolower('5'));
+	char	*position;
+	const char	str[] = "abcd";
+
+	position = ft_strrchr(str, 'p');
+	printf("%s", position);
 }*/

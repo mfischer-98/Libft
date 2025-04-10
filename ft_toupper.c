@@ -6,11 +6,9 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:47:27 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/08 11:56:11 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 10:28:44 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_toupper(int c)
 {
@@ -18,10 +16,12 @@ int	ft_toupper(int c)
 		c -=  32;
 	return (c);
 }
+/*
+#include <stdio.h>
 
 int	main(void)
 {
 	printf("%c", ft_toupper('C'));
 	printf("%c", ft_toupper('b'));
 	printf("%c", ft_toupper('5'));
-}
+}*/

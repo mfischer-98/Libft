@@ -6,11 +6,11 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:16:16 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/08 14:31:25 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 10:30:48 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
@@ -33,7 +33,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	dest[l] = '\0';
 	return (0);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -45,4 +45,4 @@ int	main(void){
 	n = 5;
 	printf("strlcpy: %s\n", strlcpy(dest, source, n));
 	printf("mine: %s\n", ft_strlcpy(dest, source, n));
-}
+}/*
