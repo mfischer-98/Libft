@@ -6,13 +6,13 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:16:16 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:49:24 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:48:09 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcpy(char *dest, const void *src, unsigned int size)
+int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	l;

@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:27:18 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:47:57 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:48:16 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 char	*ft_strlcat(char *dst, const char *src);
-int		ft_strlcpy(char *dest, char *src, unsigned int size);
+int		ft_strlcpy(char *dest, const char *src, unsigned int size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);

@@ -6,18 +6,18 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:33:33 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:25:30 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:53:32 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	lenght;
+	int	l;
 
-	lenght = 0;
-	while (*str)
+	l = 0;
+	while (str[l])
 	{
-		lenght++;
+		l++;
 	}
-	return (lenght);
+	return (l);
 }
