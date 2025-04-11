@@ -6,16 +6,17 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 10:43:16 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:24:26 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:30:37 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcat(char *restrict dst, const char *restrict src)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	l;
+	size_t	i;
+	size_t	l;
+	size_t	total;
 
 	i = 0;
 	l = 0;
@@ -23,20 +24,26 @@ char	*ft_strlcat(char *restrict dst, const char *restrict src)
 	{
 		l++;
 	}
-	while (dst[l] || src[i])
+	total = l + ft_strlen(src);
+	if (size > l)
 	{
-		dst[l] = src[i];
-		i++;
-		l++;
+		while ((src[i]) && (i + l < size - 1))
+		{
+			dst[i + l] = src[i];
+			i++;
+		}
+		dst[i + l] = '\0';
 	}
-	return (dst);
+	else
+		return (size + ft_strlen(src));
+	return (total);
 }
-/*
-int	main(void)
-{
-	char	dest[] = "Hello ";
-	char	src[] = "World!1!!!";
 
-	ft_strlcat(dest, src);
+/*int	main(void)
+{
+	char	dest[11] = "a";
+	char	src[] = "lorem";
+
+	printf("%zu\n", ft_strlcat(dest, src, 15));
 	printf("%s\n", dest);
 }*/

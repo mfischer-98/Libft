@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:13:15 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:24:01 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:29:26 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	c = (const char) c;
+	c = (unsigned char) c;
 	while (s[i])
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == '\0')
+	if (c == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }

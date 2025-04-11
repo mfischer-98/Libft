@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 10:31:22 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 10:41:09 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:34:18 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	c = (const char) c;
+	c = (unsigned char) c;
 	i = 0;
 	while (s[i])
 		i++;
-	while (i > 0)
+	while (i >= 0)
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
@@ -30,12 +30,12 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
 	char	*position;
 	const char	str[] = "abcd";
 
-	position = ft_strrchr(str, 'p');
+	position = ft_strrchr(str, 'a');
 	printf("%s", position);
 }*/

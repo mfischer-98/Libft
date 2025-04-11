@@ -6,13 +6,15 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 13:49:06 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:45:23 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:12:57 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while ((s1[i] || s2[i]) && (i < n))

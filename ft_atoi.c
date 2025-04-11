@@ -6,29 +6,29 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:57:44 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 16:18:30 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:31:57 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	res;
 	int	neg;
 
 	res = 0;
 	neg = 1;
-	while (*str == 32 || *str >= 9 && *str <= 13)
-		str++;
-	if (*str == '-' || *str == '+')
+	while ((*nptr == 32) || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (*str == '-')
+		if (*nptr == '-')
 			neg = -neg;
-		str++;
+		nptr++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		res = res * 10 + (*str - '0');
-		str++;
+		res = res * 10 + (*nptr - '0');
+		nptr++;
 	}
 	return (res * neg);
 }

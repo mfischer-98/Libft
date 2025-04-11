@@ -6,16 +6,18 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:33:33 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/10 17:53:32 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/11 11:50:52 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int	l;
 
 	l = 0;
-	while (str[l])
+	while (s[l])
 	{
 		l++;
 	}

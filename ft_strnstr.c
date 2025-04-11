@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 12:32:42 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/11 11:23:24 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/11 16:16:44 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/11 16:58:02 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	str = (unsigned char *) s;
-	c = (unsigned char) c;
-	while (i < n)
+	if ((!little || !big)  && len == 0)
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		if (str[i] == c)
-			return ((char *)&str[i]);
+		j = 0;
+		while (big[i + j] && little[i + j] && big[i + j] == little[i + j])
+		{
+			j++;
+		}
+		if (little[j] == '\0')
+			return ((char *)&big[(i + j)]);
 		i++;
 	}
 	return (NULL);
 }
-/*
+
 int	main(void)
 {
-	//char	string[] = "ab\0cdef\0gh\0ij";
-	int		tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-	int	c = -1;
-	char	*res;
+	char	big[] = "Today is a good day.";
+	char	little[] = "good";
+	char	*p;
 
-	res = (char *)ft_memchr(tab, c, 7);
-	printf("%s", res);
-}*/
+	p = ft_strnstr(big, little, 15);
+	printf("%s", p);
+}
