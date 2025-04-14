@@ -1,45 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:18 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/14 17:59:30 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/14 18:22:20 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	void	*mem;
-
-	mem = malloc(nmemb * size);
-	if (mem == NULL)
-		return (NULL);
-	while (i < nmemb * size)
-	{
-		mem[i] = '0';
-		i++;
-	}
-	return (mem);
-	//check overflow and initialize in 0s
+	write(fd, &c, 1);
 }
 
 /*int	main(void)
 {
-	int *ptr;
-	int	i;
+	int		fd;
+	char	c;
 
-	i = 0;
-	ptr = ft_calloc(5, sizeof(int));
-	while(i < 5)
-	{
-		printf("%d\n", ptr[i]);
-		i++;
-	}
-	free (ptr);
-	return (0);
-}/*/
+	c = 'a';
+	fd = open("z", O_WRONLY | O_CREAT, 0644);
+	if (fd == -1)
+		return (1);
+	ft_putchar_fd(c, fd);
+	close(fd);
+	if (close(fd) == -1)
+		return (1);
+}*/

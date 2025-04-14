@@ -1,45 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:18 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/14 18:23:09 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/14 18:42:55 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	void	*mem;
+	int	i;
 
-	mem = malloc(nmemb * size);
-	if (mem == NULL)
-		return (NULL);
-	while (i < nmemb * size)
+	i = 0;
+	while (s[i])
 	{
-		mem[i] = '0';
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (mem);
-	//check overflow and initialize in 0s
+	write (fd, "\n", 1);
 }
 
 /*int	main(void)
 {
-	int *ptr;
-	int	i;
+	int		fd;
+	char	*c;
 
-	i = 0;
-	ptr = ft_calloc(5, sizeof(int));
-	while(i < 5)
-	{
-		printf("%d\n", ptr[i]);
-		i++;
-	}
-	free (ptr);
-	return (0);
-}/*/
+	c = "abcdef";
+	fd = open("z", O_WRONLY | O_CREAT, 0644);
+	if (fd == -1)
+		return (1);
+	ft_putendl_fd(c, fd);
+	close(fd);
+	if (close(fd) == -1)
+		return (1);
+}*/

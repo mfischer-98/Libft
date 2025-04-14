@@ -1,45 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:18 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/14 17:20:46 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/14 17:36:50 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*mem;
+	char	*str;
+	int		i;
 
-	mem = malloc(nmemb * size);
-	if (mem == NULL)
+	str = malloc ((ft_strlen(s) + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	while (i < nmemb * size)
-	{
-		mem[i] = '0';
-		i++;
-	}
-	return (mem);
-	//check overflow and initialize in 0s
-}
-
-/*int	main(void)
-{
-	int *ptr;
-	int	i;
 
 	i = 0;
-	ptr = ft_calloc(5, sizeof(int));
-	while(i < 5)
+	while (s[i])
 	{
-		printf("%d\n", ptr[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-	free (ptr);
+	str[i] = '\0';
+	return (str);
+}
+
+/*char	alt_toupper(unsigned int i, char c)
+{
+	(void)i; 
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c); 
+}
+
+int	main(void)
+{
+	char	s[] = "LEts go";
+	char	*new;
+
+	new = ft_strmapi(s, alt_toupper);
+	printf ("%s\n", new);
+	free(new);
 	return (0);
-}/*/
+}*/

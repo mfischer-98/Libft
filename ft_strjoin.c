@@ -1,45 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:18 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/14 16:05:05 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/14 16:22:16 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*mem;
+	char	*str;
+	int		len;
+	int		i;
+	int		j;
 
-	mem = malloc(nmemb * size);
-	if (mem == NULL)
+	i = 0;
+	j = 0;
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc ((len + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
-	while (i < nmemb * size)
+	while (s1[i])
 	{
-		mem[i] = '0';
+		str[i] = s1[i];
 		i++;
 	}
-	return (mem);
-	//check overflow and initialize in 0s
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
 /*int	main(void)
 {
-	int *ptr;
-	int	i;
+	char	str1[] = "First string and ";
+	char	str2[] = "second string.";
+	char	*new;
 
-	i = 0;
-	ptr = ft_calloc(5, sizeof(int));
-	while(i < 5)
-	{
-		printf("%d\n", ptr[i]);
-		i++;
-	}
-	free (ptr);
+	new = ft_strjoin(str1, str2);
+	printf("%s\n", new);
+	free (new);
 	return (0);
-}/*/
+}*/

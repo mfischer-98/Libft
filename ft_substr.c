@@ -1,45 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:18 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/14 15:34:10 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/14 16:04:38 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*mem;
+	int		i;
+	int		j;
+	char	*sub;
 
-	mem = malloc(nmemb * size);
-	if (mem == NULL)
+	i = 0;
+	j = 0;
+	sub = malloc((len + 1) * sizeof(char));
+	if (sub == NULL || s == NULL)
 		return (NULL);
-	while (i < nmemb * size)
+	while (s[i])
 	{
-		mem[i] = '0';
+		if (s[i] == start)
+		{
+			while (j < len)
+			{
+				sub[j] = s[i];
+				j++;
+				i++;
+			}
+			sub[j] = '\0';
+			return (sub);
+		}
 		i++;
 	}
-	return (mem);
-	//check overflow and initialize in 0s
+	return (NULL);
 }
 
 /*int	main(void)
 {
-	int *ptr;
-	int	i;
+	char	*str;
+	char	*sub;
 
-	i = 0;
-	ptr = ft_calloc(5, sizeof(int));
-	while(i < 5)
-	{
-		printf("%d\n", ptr[i]);
-		i++;
-	}
-	free (ptr);
+	str = "I have so much to do today.";
+	sub = ft_substr(str, 'm', 4);
+	printf("%s", sub);
+	free (sub);
 	return (0);
-}/*/
+}*/
