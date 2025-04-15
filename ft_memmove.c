@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 11:49:37 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/11 16:53:40 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/15 10:23:55 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (src < dest)
 	{
 		while (n--)
-		{
 			d[n] = s[n];
-		}
 	}
 	else
+	{
 		while (i < n)
 		{
 			d[i] = s[i];
 			i++;
 		}
+	}
 	return (dest);
 }
 

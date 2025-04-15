@@ -6,51 +6,45 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:22:55 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:17:13 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:22:18 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_check(char s1, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == s1)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
-	int		k;
-	char	*trim;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-
-	trim = malloc ((ft_strlen(s1) + 1) * sizeof(char));
-	if (trim == NULL)
-		return (NULL);
-		
 	i = 0;
-	k = 0;
-	while (s1[i])
-	{
-	/*comparo s1 com todos os set, se acabar e nao tiver match,
-	 copiamos, se nao i++*/
-		j = 0;
-		while (set[j] && s1[i] != set[j])
-		{
-			j++;
-		}
-		if (set[j] == '\0')
-			{
-				trim[k] = s1[i];
-				k++;
-			}
+	j = ft_strlen(s1) - 1;
+	if (!j)
+		return (ft_strdup(""));
+	while (ft_check(s1[i], set))
 		i++;
-	}
-	trim[i] = '\0';
-	return (trim);
+	while (ft_check(s1[j], set))
+		j--;
+	return (ft_substr(s1, i, j - (i - 1)));
 }
 
 /*int	main(void)
 {
-	char str1[] = "This has to be trimmed.";
+	char str1[] = "aaThis has to be trimmed.ee";
 	char str2[] = "ae"; 
 	char *new;
 

@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:43:32 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 18:50:18 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/15 09:34:12 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		write(fd, "-2147483648", 11);
 		return ;
-	}	
+	}
 	if (n < 0)
 	{
 		write(fd, "-", 1);
@@ -30,8 +30,10 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 	if (n >= 0 && n <= 9)
+	{
 		n = n + 48;
 		write(fd, &n, 1);
+	}
 }
 
 /*int	main(void)

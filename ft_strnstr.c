@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:16:44 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/12 17:33:29 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:25:58 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (*little == '\0')
+	if (little[0] == '\0')
 		return ((char *)big);
+	if (len == 0)
+		return (NULL);
 	while (big[i] && i < len)
 	{
 		j = 0;
-		while (big[i + j] && little[j] && big[i + j] == little[j])
+		while (big[i + j] && little[j] && big[i + j] == little[j] && (i + j < len))
 		{
 			j++;
 		}

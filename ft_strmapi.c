@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:20:46 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 17:36:50 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/15 09:34:51 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = malloc ((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-
 	i = 0;
 	while (s[i])
 	{

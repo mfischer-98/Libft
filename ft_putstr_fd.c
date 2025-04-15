@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:18:44 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 18:22:11 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:33:56 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int		fd;
 	char	*c;
 
-	c = "abcdef";
+	c = "Hellooo";
 	fd = open("z", O_WRONLY | O_CREAT, 0644);
 	if (fd == -1)
 		return (1);
