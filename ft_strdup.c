@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:38:11 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/12 17:52:46 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:20:01 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strdup(const char *s)
 	l = ft_strlen(s);
 	str = malloc ((l + 1) * sizeof(char));
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	while (i < l)
 	{
 		str[i] = s[i];

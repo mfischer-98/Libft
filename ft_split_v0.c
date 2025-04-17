@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_francy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:57:17 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/17 15:51:05 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:45:45 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int	count_words(char const *s, char c);
-static char	**add_words(char **array, char const *s, char c, int n);
 static char	*ft_strndup(char const *s, char c);
-static char	**free_memory(char **array, int n);
+static char	**free_memory(char **str, int n);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	int		size;
+	int		n;
+	int		i;
 
+	i = 0;
 	if (!s)
 		return (NULL);
-	size = count_words(s, c);
-	array = malloc((size + 1) * (sizeof (char *)));
+	n = count_words(s, c);
+	array = ft_calloc((n + 1), sizeof(char *));
 	if (!array)
 		return (NULL);
-	return (add_words(array, s, c, size));
+	array[n] = NULL;
+	n = 0;= malloc ((i + 1) * 
+			i++;
+		if (s[i])
+		{
+			array[n] = ft_strndup(&s[i], c);
+			if (!array[n])
+				return (free_memory(array, n));
+		}
+		while (s[i] != c && s[i])
+			i++;
+		n++;
+	}
+	array[n] = NULL;
+	return (array);
 }
 
 static int	count_words(char const *s, char c)
@@ -36,6 +51,8 @@ static int	count_words(char const *s, char c)
 	int	i;
 	int	count;
 
+	if (!s)
+		return (0);
 	i = 0;
 	count = 0;
 	while (s[i])
@@ -48,31 +65,6 @@ static int	count_words(char const *s, char c)
 			i++;
 	}
 	return (count);
-}
-
-static char	**add_words(char **array, char const *s, char c, int size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (j < size)
-	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i])
-		{
-			array[j] = ft_strndup(&s[i], c);
-			if (!array[j])
-				return (free_memory(array, j));
-		}
-		while (s[i] != c && s[i])
-			i++;
-		j++;
-	}
-	array[j] = NULL;
-	return (array);
 }
 
 static char	*ft_strndup(char const *s, char c)
@@ -96,24 +88,24 @@ static char	*ft_strndup(char const *s, char c)
 	return (str);
 }
 
-static char	**free_memory(char **array, int n)
+static char	**free_memory(char **str, int n)
 {
 	int	i;
-
+ft_split2.c
 	i = 0;
-	while (i < n)
+	while (i < n) //liberar memoria de cada palavra ANTERIOR
 	{
-		free(array[i]);
+		free(str[i]);
 		i++;
 	}
-	free(array);
+	free(str);
 	return (NULL);
 }
 
 /*int	main(void)
 {
-	char	str[] = "hello!";
-		char	**array;
+	char	str[] = "  Hello hello      ";
+	char	**array;
 	int		i = 0;
 
 	array = ft_split(str, ' ');
@@ -124,5 +116,4 @@ static char	**free_memory(char **array, int n)
 		free(array[i]);
 		i++;
 	}
-	free(array);
 }*/

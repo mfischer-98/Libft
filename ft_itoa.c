@@ -6,60 +6,60 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:40:04 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/16 16:56:29 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/17 14:36:42 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	n_len(int n)
+static int	count_len(int nbr)
 {
-	int		len;
+	int	len;
 
 	len = 0;
-	while (n != 0)
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+		len++;
+	while (nbr)
 	{
-		n = n / 10;
+		nbr = nbr / 10;
 		len++;
 	}
 	return (len);
 }
 
-static char	*ft_putnbr(char *str, int n)
-{
-	int	i;
-
-	i = 0;
-	while (*str)
-	{
-		str[i] = n + 48;
-		i++;
-	}
-	return (str);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		len;
+	long	nbr;
+	int		size;
+	int		i;
 
-	len = n_len(n);
-	str = malloc((len + 1) * sizeof (char));
+	nbr = (long) n;
+	size = count_len(nbr);
+	str = malloc((size + 1) * sizeof (char));
 	if (!str)
 		return (NULL);
-	if (n == 0)
-		return (0);
-	if (n < 0)
+	if (nbr == 0)
+		str[0] = '0';
+	i = size - 1;
+	if (nbr < 0)
 	{
 		str[0] = '-';
-		n = -n;
+		nbr = -nbr;
 	}
-	str = ft_putnbr(str, n);
-	str[n + 1] = '\0';
+	while (nbr != 0)
+	{
+		str[i--] = (nbr % 10) + '0';
+		nbr = nbr / 10;
+	}
+	str[size] = '\0';
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	printf("%s\n", ft_itoa(42));
-}
+	printf("number: %s\n", ft_itoa(1000647));
+	printf("count: %d\n", count_len(1000647));
+}*/
