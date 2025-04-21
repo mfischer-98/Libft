@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/15 14:32:20 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/21 15:38:14 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*mem;
 
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+		return (NULL);
 	mem = malloc(nmemb * size);
 	if (mem == NULL)
 		return (NULL);

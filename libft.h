@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:27:18 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/17 14:18:23 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/21 15:12:27 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include <fcntl.h> //for open
 # include <stdio.h> //take this out
 

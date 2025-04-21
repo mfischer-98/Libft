@@ -6,9 +6,11 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:57:44 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/11 15:31:57 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/21 15:28:48 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -17,6 +19,8 @@ int	ft_atoi(const char *nptr)
 
 	res = 0;
 	neg = 1;
+	if (!nptr)
+		return (0);
 	while ((*nptr == 32) || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
