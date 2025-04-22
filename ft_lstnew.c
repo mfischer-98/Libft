@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 17:56:18 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/22 13:52:09 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/22 17:48:22 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/22 18:23:53 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	i;
+	t_list	*node;
 
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
+
+//how do i test this?
+/* #include <stdio.h>
+int main() 
+{
+	t_list *node1;
+	char *content = "hello world";
+
+	node1 = ft_lstnew(content);
+	printf("%p\n", node1);
+	printf("%s\n", (char *)node1->content);
+	return 0;
+} */

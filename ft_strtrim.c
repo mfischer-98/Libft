@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:22:55 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/15 15:22:18 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:03:07 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, i, j - (i - 1)));
 }
 
-/*int	main(void)
+/*#include <stdio.h>
+
+int	main(void)
 {
-	char str1[] = "aaThis has to be trimmed.ee";
+	char str1[] = "aaeThis has to be trimmed.eae";
 	char str2[] = "ae"; 
 	char *new;
 

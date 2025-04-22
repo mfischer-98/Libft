@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 11:57:44 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/21 15:28:48 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:20:47 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * neg);
 }
-/*
-#include <stdio.h>
+
+/* #include <stdio.h>
 #include <stdlib.h>
 
 int	main(int argc, char **argv)
@@ -47,4 +47,4 @@ int	main(int argc, char **argv)
 		printf("atoi: %d\n", atoi(argv[1]));
 		printf("mine: %d\n", ft_atoi(argv[1]));
 	}
-}*/
+} */

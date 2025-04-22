@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:27:18 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/21 15:12:27 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:48:07 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <fcntl.h> //for open
-# include <stdio.h> //take this out
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -54,5 +53,15 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+//BONUS
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+} t_list;
+
+t_list	*ft_lstnew(void *content);
 
 #endif
