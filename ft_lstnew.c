@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:48:22 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/22 18:23:53 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:51:46 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ t_list	*ft_lstnew(void *content)
 	return (node);
 }
 
-//how do i test this?
-/* #include <stdio.h>
+/*#include <stdio.h>
 int main() 
 {
 	t_list *node1;
@@ -34,5 +33,6 @@ int main()
 	node1 = ft_lstnew(content);
 	printf("%p\n", node1);
 	printf("%s\n", (char *)node1->content);
+	printf("%s\n", (char *)node1->next);
 	return 0;
-} */
+}  */

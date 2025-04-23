@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:23:09 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/14 18:42:55 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:49:56 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	ft_putendl_fd(char *s, int fd)
 	write (fd, "\n", 1);
 }
 
-/*int	main(void)
+/*# include <fcntl.h> //for open
+
+int	main(void)
 {
 	int		fd;
 	char	*c;

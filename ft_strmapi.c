@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:20:46 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/15 09:34:51 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:11:22 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-/*char	alt_toupper(unsigned int i, char c)
+/* char	function(unsigned int i, char c)
 {
-	(void)i; 
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c); 
+	return (i + c);
 }
 
 int	main(void)
 {
-	char	s[] = "LEts go";
+	char	str[] = "ok_";
 	char	*new;
 
-	new = ft_strmapi(s, alt_toupper);
+	new = ft_strmapi(str, *function);
 	printf ("%s\n", new);
 	free(new);
 	return (0);
-}*/
+} */

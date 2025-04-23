@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:27:18 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/22 17:48:07 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:51:18 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <stdint.h>
+# include <string.h>
 # include <fcntl.h> //for open
 
 int		ft_isalpha(int c);
@@ -60,8 +62,12 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-} t_list;
+}	t_list;
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif

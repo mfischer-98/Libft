@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:33:53 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/21 15:38:14 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:57:32 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = ft_calloc(5, sizeof(int));
 	while(i < 5)
 	{
-		printf("%d\n", ptr[i]);
+		printf("%d", ptr[i]);
 		i++;
 	}
 	free (ptr);

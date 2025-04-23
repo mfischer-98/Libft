@@ -6,7 +6,7 @@
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:43:32 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/15 09:34:12 by mefische         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:50:02 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
-/*int	main(void)
+/*# include <fcntl.h> //for open
+
+int	main(void)
 {
 	int	fd;
 	int	c;

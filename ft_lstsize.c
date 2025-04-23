@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mefische <mefische@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 17:52:11 by mefische          #+#    #+#             */
-/*   Updated: 2025/04/23 14:51:56 by mefische         ###   ########.fr       */
+/*   Created: 2025/04/23 12:28:59 by mefische          #+#    #+#             */
+/*   Updated: 2025/04/23 17:28:30 by mefische         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int ft_lstsize(t_list *lst)
 {
-	if (lst && new)
+	int	count;
+
+	count = 0;
+	while (lst != NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		count++;
+		lst = lst->next;
 	}
+	return (count);
 }
 
-/*  int	main()
+/*int	main()
 {
 	t_list	*node1 = malloc(sizeof(t_list));
-	node1->content = "oioi";
-	t_list	*new = malloc(sizeof(t_list));
-	new->content = "tchau";
+	t_list	*node2 = malloc(sizeof(t_list));
+	t_list	*node3 = malloc(sizeof(t_list));
 	t_list	**lst = &node1;
-	printf("%s\n", (char *)(*lst)->content);
 
-	ft_lstadd_front(lst, new);
-	printf("%s\n", (char *)(*lst)->content);
-} */
+	node1->content = "um";
+	node1->next = node2;
+	node2->content = "dois";
+	node2->next = node3;
+	node3->content = "tres";
+	node3->next = NULL;
+
+	printf("%d", ft_lstsize(*lst));
+}*/
